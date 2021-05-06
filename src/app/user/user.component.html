@@ -1,0 +1,26 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-s-6">
+      <label>Username</label>
+        <input [(ngModel)] = "username" type="text" class="form-control">
+
+          <p>{{ username }}</p>
+
+        <button (click)="username = '' " class="btn btn-primary" [disabled]="username === '' " >Reset</button>
+    </div>
+  </div>
+</div>
+
+
+<hr>
+
+<!-- <button (click)="showContent=!showContent" class="btn btn-primary">Display Details</button> -->
+<button (click)="onToggle()" class="btn btn-primary">Display Details</button>
+<p *ngIf="showContent">My Password is Hello</p>
+<div
+[ngClass] = "{'white-text' : logItem >=5 }" 
+[ngStyle]="{ backgroundColor: logItem >= 5 ? 'blue' :'transparent' }" 
+*ngFor="let logItem of log">{{ logItem }}
+</div>
